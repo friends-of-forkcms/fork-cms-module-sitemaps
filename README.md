@@ -10,7 +10,8 @@
 * You can easily add custom modules to the sitemap generator
 
 **Installation**
-* Copy/paste this module to your fork cms.
+* Execute `composer install jeroendesloovere/sitemap-bundle`
+* Then copy/paste this module to your fork cms.
 * Add in `app/AppKernel`:
 ```php
 new \Backend\Modules\Sitemaps\Sitemaps(),
