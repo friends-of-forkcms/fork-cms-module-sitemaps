@@ -27,7 +27,7 @@ sitemap_*.xml
 ```
 # allow sitemaps
 RewriteRule ^sitemap.xml$ - [L]
-RewriteRule ^sitemap_(.*)_(.*).xml$ - [L]
+RewriteRule ^sitemap_(.*).xml$ - [L]
 ```
 * Add in composer.json for `post-update-cmd`:
 ```
