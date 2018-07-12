@@ -49,10 +49,66 @@ before "deploy:cleanup", "sitemap:generate"
 after "deploy:rollback", "sitemap:generate"
 ```
 
+### Example: "How to create your custom sitemap?"
+
+We need to notify Symfony that we have a new sitemap provider.
+Add the following somewhere in your `services.yaml`
+```yaml
+services:
+    App\SitemapProviders\NewsArticleSitemapProvider:
+        tags:
+            - { name: sitemap.provider }
+```
+
+When the `SitemapGenerator` needs to generate the sitemap(s),
+it will ask all SitemapProviders to fill in the items.
+Create something like the following in your app.
+```php
+<?php
+
+namespace App\SitemapProviders;
+
+use JeroenDesloovere\SitemapBundle\Item\ChangeFrequency;
+use JeroenDesloovere\SitemapBundle\Provider\SitemapProvider;
+use JeroenDesloovere\SitemapBundle\Provider\SitemapProviderInterface;
+
+class NewsArticleSitemapProvider extends SitemapProvider implements SitemapProviderInterface
+{
+    /** @var NewsArticleRepository */
+    private $articleRepository;
+
+    public function __construct(NewsArticleRepository $articleRepository)
+    {
+        $this->articleRepository = $articleRepository;
+
+        // `NewsArticle::class` would even be better then just `NewsArticle`
+        // because you can then use it with doctrine events.
+        parent::__construct('NewsArticle');
+    }
+
+    public function createItems(): void
+    {
+        /** @var Article[] $articles */
+        $articles = $this->articleRepository->findAll();
+        foreach ($articles as $article) {
+            $this->createItem('/nl/xxx/url-to-article', $article->getEditedOn(), ChangeFrequency::monthly());
+        }
+    }
+}
+```
+
 ## How to generate the sitemaps?
 
-`bin/console sitemap:generate`
-> You can set a cronjob to execute this every hour or so.
+You can now generate the sitemap(s) by executing:
+```bash
+bin/console sitemap:generate
+```
+> Use a cronjob (f.e. every hour) to have up-to-date sitemaps.
+
+OR if you want to use PHP
+```php
+$this->getContainer()->get('sitemap.generator')->generate();
+```
 
 ## Contributing
 
