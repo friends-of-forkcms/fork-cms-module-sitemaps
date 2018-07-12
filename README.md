@@ -29,23 +29,28 @@ RewriteRule ^sitemap_(.*)_(.*).xml$ - [L]
 ```
 * Add in composer.json for `post-update-cmd`:
 ```
-"php bin/console sitemap:build"
+"php bin/console sitemap:generate"
 ```
 * If you are using capistrano to deploy, add the following to `deploy.rb`:
 ```ruby
 ## Generate sitemap
 namespace :sitemap do
-  desc "Build the sitemap"
-  task :build do
+  desc "Generate the sitemap.xml and sitemap files per provider."
+  task :generate do
     on roles(:db) do
-      execute "cd #{current_path} && bin/console sitemap:build"
+      execute "cd #{current_path} && bin/console sitemap:generate"
     end
   end
 end
 
-before "deploy:cleanup", "sitemap:build"
-after "deploy:rollback", "sitemap:build"
+before "deploy:cleanup", "sitemap:generate"
+after "deploy:rollback", "sitemap:generate"
 ```
+
+## How to generate the sitemaps?
+
+`bin/console sitemap:generate`
+> You can set a cronjob to execute this every hour or so.
 
 ## Contributing
 
