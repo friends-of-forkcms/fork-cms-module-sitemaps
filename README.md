@@ -21,7 +21,7 @@ new \JeroenDesloovere\SitemapBundle\SitemapBundle(),
 * Add in `.gitignore`:
 ```
 sitemap.xml
-sitemap_*_*.xml
+sitemap_*.xml
 ```
 * Add in `.htaccess`:
 ```
