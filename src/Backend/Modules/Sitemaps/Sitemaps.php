@@ -2,7 +2,7 @@
 
 namespace Backend\Modules\Sitemaps;
 
-use Backend\Modules\Sitemaps\DependencyInjection\Compiler\SitemapsProviderPass;
+use Backend\Modules\Sitemaps\DependencyInjection\Compiler\SitemapsCompilerPass;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
@@ -13,6 +13,6 @@ class Sitemaps extends Bundle
 {
     public function build(ContainerBuilder $container)
     {
-        $container->addCompilerPass(new SitemapsProviderPass());
+        $container->addCompilerPass(new SitemapsCompilerPass());
     }
 }
