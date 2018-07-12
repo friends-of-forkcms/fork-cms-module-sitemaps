@@ -13,9 +13,10 @@
 * Copy/paste this module to your fork cms and install it
 * Add in `app/AppKernel`:
 ```php
-new \Backend\Modules\Sitemaps\Sitemaps(),`
+new \Backend\Modules\Sitemaps\Sitemaps(),
 new \JeroenDesloovere\SitemapBundle\SitemapBundle(),
 ```
+
 * Add in `.gitignore`:
 ```
 sitemap.xml
