@@ -10,13 +10,13 @@
 * You can easily add custom modules to the sitemap generator
 
 **Installation**
-* Copy/paste this module to your fork cms and install it
+* Copy/paste this module to your fork cms.
 * Add in `app/AppKernel`:
 ```php
 new \Backend\Modules\Sitemaps\Sitemaps(),
 new \JeroenDesloovere\SitemapBundle\SitemapBundle(),
 ```
-
+* Install the module.
 * Add in `.gitignore`:
 ```
 sitemap.xml
