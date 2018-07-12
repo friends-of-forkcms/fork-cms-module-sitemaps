@@ -1,0 +1,4 @@
+services:
+    Backend\Modules\Sitemaps\Providers\PagesSitemapProvider:
+        tags:
+            - { name: sitemap.provider }
