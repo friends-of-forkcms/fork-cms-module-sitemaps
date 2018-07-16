@@ -13,8 +13,10 @@ class SitemapsCompilerPass implements CompilerPassInterface
             return;
         }
 
-        $container->get('sitemap.generator')->setUrl(
-            $container->getParameter('site.protocol') . '://' . $container->getParameter('site.domain')
-        );
+        $container->setParameter('router.request_context.host', $container->getParameter('site.domain'));
+        $container->setParameter('router.request_context.scheme', $container->getParameter('site.protocol'));
+        $container->setParameter('router.request_context.base_url', '');
+        $container->setParameter('asset.request_context.base_path', $container->getParameter('router.request_context.base_url'));
+        $container->setParameter('asset.request_context.secure', true);
     }
 }
