@@ -97,6 +97,8 @@ class NewsArticleSitemapProvider extends SitemapProvider implements SitemapProvi
 }
 ```
 
+[View more examples over here](https://github.com/jeroendesloovere/sitemap-bundle)
+
 ## How to generate the sitemaps?
 
 You can now generate the sitemap(s) by executing:
