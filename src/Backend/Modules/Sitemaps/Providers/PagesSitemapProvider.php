@@ -27,7 +27,7 @@ class PagesSitemapProvider extends SitemapProvider implements SitemapProviderInt
                     foreach ($children as $pageId => $page) {
                         $pageInfo = Model::get($page['page_id']);
                         $lastModifiedOn = date_timestamp_set(new \DateTime(), (int) $pageInfo['edited_on']);
-                        $priority = 9;
+                        $priority = 5;
                         $changeFrequency = ChangeFrequency::weekly();
 
                         // Home page
