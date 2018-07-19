@@ -4,7 +4,6 @@ namespace Backend\Modules\Sitemaps\Actions;
 
 use Backend\Core\Engine\Base\ActionIndex;
 use Backend\Core\Engine\Model;
-use Backend\Modules\Brands\Domain\Brand\BrandDataGrid;
 
 final class Generate extends ActionIndex
 {
