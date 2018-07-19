@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<locale>
+  <Backend>
+    <Core>
+      <item type="label" name="Sitemaps">
+        <translation language="en"><![CDATA[sitemaps]]></translation>
+        <translation language="nl"><![CDATA[sitemaps]]></translation>
+      </item>
+    </Core>
+    <Sitemaps>
+      <item type="error" name="ErrorWhileGeneratingSitemaps">
+        <translation language="en"><![CDATA[There has happened an error while generating the sitemaps. Contact your administrator to look at this.]]></translation>
+        <translation language="nl"><![CDATA[Er lijkt een fout gebeurd te zijn bij het genereren van de sitemaps. Contacteer je administrator om dit te laten nakijken.]]></translation>
+      </item>
+      <item type="label" name="Generate">
+        <translation language="en"><![CDATA[generate]]></translation>
+        <translation language="nl"><![CDATA[genereer]]></translation>
+      </item>
+      <item type="message" name="GenerateHelp">
+        <translation language="en"><![CDATA[You can re-generate the sitemaps by clicking the button.]]></translation>
+        <translation language="nl"><![CDATA[Je kan de sitemaps laten hergenereren door op de knop te klikken.]]></translation>
+      </item>
+      <item type="message" name="SitemapsGenerated">
+        <translation language="en"><![CDATA[Sitemaps successful generated.]]></translation>
+        <translation language="nl"><![CDATA[Sitemaps succesvol gegenereerd.]]></translation>
+      </item>
+    </Sitemaps>
+  </Backend>
+</locale>
