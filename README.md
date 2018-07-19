@@ -11,7 +11,7 @@
 * There is a re-generate button in the backend, so you can regenerate all sitemaps.
 
 **Installation**
-* Execute `composer install jeroendesloovere/sitemap-bundle`
+* Execute `composer require jeroendesloovere/sitemap-bundle`
 * Then copy/paste this module to your fork cms.
 * Add in `app/AppKernel`:
 ```php
