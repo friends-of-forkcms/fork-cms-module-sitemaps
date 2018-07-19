@@ -7,7 +7,8 @@
 
 **Features:**
 * Creates a sitemap.xml and a file per sitemap-provider (like f.e.: Pages, Blog, Realizations, Jobs, ...).
-* You can easily add custom modules to the sitemap generator
+* You can easily add custom modules to the sitemap generator.
+* There is a re-generate button in the backend, so you can regenerate all sitemaps.
 
 **Installation**
 * Execute `composer install jeroendesloovere/sitemap-bundle`
