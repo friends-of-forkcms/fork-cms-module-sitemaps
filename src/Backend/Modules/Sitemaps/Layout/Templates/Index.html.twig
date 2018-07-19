@@ -1,0 +1,14 @@
+{% extends '/Layout/Templates/base.html.twig' %}
+{% import "Layout/Templates/macros.html.twig" as macro %}
+
+{% block actionbar %}
+  {% if showBrandsAdd %}
+    <div class="btn-toolbar pull-right">
+      {{ macro.buttonIcon(geturl('Generate'), 'icon-refresh', 'lbl.Generate'|trans|ucfirst) }}
+    </div>
+  {% endif %}
+{% endblock %}
+
+{% block content %}
+  <p>{{ 'msg.GenerateHelp'|trans }}</p>
+{% endblock %}
