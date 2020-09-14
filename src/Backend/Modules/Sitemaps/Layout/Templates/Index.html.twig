@@ -2,7 +2,7 @@
 {% import "Layout/Templates/macros.html.twig" as macro %}
 
 {% block actionbar %}
-  {% if showBrandsAdd %}
+  {% if showSitemapsGenerate %}
     <div class="btn-toolbar pull-right">
       {{ macro.buttonIcon(geturl('Generate'), 'icon-refresh', 'lbl.Generate'|trans|ucfirst) }}
     </div>
