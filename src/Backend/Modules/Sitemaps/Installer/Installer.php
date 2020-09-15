@@ -14,6 +14,9 @@ class Installer extends ModuleInstaller
         $this->addModule('Sitemaps');
         $this->configureBackendNavigation();
         $this->configureBackendRights();
+
+        // Import locale
+        $this->importLocale(dirname(__FILE__) . '/Data/locale.xml');
     }
 
     private function configureBackendNavigation(): void
